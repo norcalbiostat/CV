@@ -1,94 +1,66 @@
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template for CV/Resume
-%
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
-%
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-%
-% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
-% 23 November 2018
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-%
-%-------------------------------------------------------------------------------
-% CONFIGURATIONS
-%-------------------------------------------------------------------------------
-% A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv}
+%% Template for a CV
+%% Author: Rob J Hyndman
 
-% Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\documentclass[10pt,a4paper,]{article}
+\usepackage[scaled=0.86]{DejaVuSansMono}
+\usepackage[sfdefault,lf,t]{carlito}
 
-% Specify the location of the included fonts
-\fontdir[fonts/]
+% Change color to blue
+\usepackage{color,xcolor}
+\definecolor{headcolor}{HTML}{168233}
 
-% Color for highlights
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
 
-\definecolor{awesome}{HTML}{1618b5}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
-% Colors for text
-% Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true,hidelinks]{hyperref}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{geometry}
+\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm}
 
-% Set false if you don't want to highlight section with awesome color
-\setbool{acvSectionColorHighlight}{true}
-
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-
-\def\endfirstpage{\newpage}
-
-%-------------------------------------------------------------------------------
-%	PERSONAL INFORMATION
-%	Comment any of the lines below if they are not required
-%-------------------------------------------------------------------------------
-% Available options: circle|rectangle,edge/noedge,left/right
-
-\name{Robin A. Donatello}{}
-
-
-\email{\href{mailto:rdonatello@csuchico.edu}{\nolinkurl{rdonatello@csuchico.edu}}}
-\homepage{norcalbiostat.com}
-\github{norcalbiostat}
-\linkedin{rajeffries}
-\twitter{norcalbiostat}
-
-% \gitlab{gitlab-id}
-% \stackoverflow{SO-id}{SO-name}
-% \skype{skype-id}
-% \reddit{reddit-id}
-
-
-\usepackage{booktabs}
-
-% Templates for detailed entries
-% Arguments: what when with where why
-\usepackage{etoolbox}
-\def\detaileditem#1#2#3#4#5{%
-\cventry{#1}{#3}{#4}{#2}{\ifx#5\empty\else{\begin{cvitems}#5\end{cvitems}}\fi}\ifx#5\empty{\vspace{-4.0mm}}\else\fi}
-\def\detailedsection#1{\begin{cventries}#1\end{cventries}}
-
-% Templates for brief entries
-% Arguments: what when with
-\def\briefitem#1#2#3{\cvhonor{}{#1}{#3}{#2}}
-\def\briefsection#1{\begin{cvhonors}#1\end{cvhonors}}
-
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
-	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
 
-%------------------------------------------------------------------------------
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 
+
+
+\date{August, 2020}
 
 %%%% BIBLIOGRAPHY
 % Bibliography formatting
@@ -145,78 +117,264 @@
     \field{year}
   }
 }
-\DeclareBibliographyCategory{bib-C:/GitHub/CV/pubs.bib-4284464}
-\DeclareBibliographyCategory{bib-C:/GitHub/CV/pubs.bib-4285658}
-\DeclareBibliographyCategory{bib-C:/GitHub/CV/pubs.bib-4286755}
+\DeclareBibliographyCategory{bib-C:/GitHub/CV/pubs.bib-2950198}
+\DeclareBibliographyCategory{bib-C:/GitHub/CV/pubs.bib-2951295}
+\DeclareBibliographyCategory{bib-C:/GitHub/CV/pubs.bib-2952292}
 \bibliography{C:/GitHub/CV/pubs.bib}
 
+\usepackage{paralist,ragged2e,datetime}
+\usepackage[hyphens]{url}
+\usepackage{fancyhdr,enumitem,pifont}
+\usepackage[compact,small,sf,bf]{titlesec}
+
+\RaggedRight
+\sloppy
+
+% Header and footer
+\pagestyle{fancy}
+\makeatletter
+\lhead{\sf\textcolor[gray]{0.4}{Curriculum Vitae: \@name}}
+\rhead{\sf\textcolor[gray]{0.4}{\thepage}}
+\cfoot{}
+\def\headrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+\makeatother
+
+% Header box
+\usepackage{tabularx}
+
+\makeatletter
+\def\name#1{\def\@name{#1}}
+\def\info#1{\def\@info{#1}}
+\makeatother
+\newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
+
+\usepackage{calc}
+\newlength{\headerboxwidth}
+\setlength{\headerboxwidth}{\textwidth}
+%\addtolength{\headerboxwidth}{0.2cm}
+\makeatletter
+\def\maketitle{
+\thispagestyle{plain}
+\vspace*{-1.4cm}
+\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+\hbox to 0.98\textwidth{\begin{tabular}{l}
+\\[-0.3cm]
+\LARGE\textbf{\@name}
+\\[0.1cm]\large Associate Professor of Statistics\\[0.6cm]
+\normalsize\textbf{Curriculum Vitae}\\
+\normalsize August, 2020
+\end{tabular}
+\hfill\hbox{\fontsize{9}{12}\sf
+\begin{tabular}{@{}rl@{}}
+\@info
+\end{tabular}}}\hfil
+}
+\vspace*{0.2cm}}
+\makeatother
+
+% Section headings
+\titlelabel{}
+\titlespacing{\section}{0pt}{1.5ex}{0.5ex}
+\titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
+\titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
+\titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+
+% Miscellaneous dimensions
+\setlength{\parskip}{0ex}
+\setlength{\parindent}{0em}
+\setlength{\headheight}{15pt}
+\setlength{\tabcolsep}{0.15cm}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\setlist{itemsep=1pt}
+\setdescription{labelwidth=1.2cm,leftmargin=1.5cm,labelindent=1.5cm,font=\rm}
+
+% Make nicer bullets
+\renewcommand{\labelitemi}{\ding{228}}
+
+\usepackage{booktabs,fontawesome}
+%\usepackage[t1,scale=0.86]{sourcecodepro}
+
+\name{Robin A. Donatello}
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
+\info{%
+\raisebox{-0.05cm}{\imagetop{\faicon{map-marker}}} &  \imagetop{\begin{tabular}{@{}l@{}}Department of Mathematics and Statistics, \tabularnewline California State University, Chico\end{tabular}}\\ %
+\faicon{home} & \href{http://norcalbiostat.com}{norcalbiostat.com}\\% %
+%
+\faicon{envelope} & \href{mailto:rdonatello@csuchico.edu}{\nolinkurl{rdonatello@csuchico.edu}}\\%
+\faicon{twitter} & \href{https://twitter.com/norcalbiostat}{@norcalbiostat}\\%
+\faicon{github} & \href{https://github.com/norcalbiostat}{norcalbiostat}\\%
+\faicon{linkedin} & \href{https://www.linkedin.com/in/rajeffries}{rajeffries}\\%
+%
+%
+}
+
+
+%\usepackage{inconsolata}
+
+
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\def\detaileditem#1#2#3#4#5{
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\hfill{\footnotesize #3}\\
+      \ifx#4\empty\else#4\par\fi%
+      \ifx#5\empty\else{%
+        \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+        \begin{itemize}#5\end{itemize}%
+        \end{minipage}}\fi%
+      \vspace{\parsep}}\\}
+%\def\detailedsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\def\detailedsection#1{\begin{longtable}{@{\extracolsep{\fill}}ll}#1\end{longtable}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{
+#2 & \parbox[t]{0.85\textwidth}{%
+      \textbf{#1}\\[-0.1cm]{\footnotesize #3}}\\[0.4cm]}
+%\def\briefsection#1{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}#1\end{tabular*}}
+\def\briefsection#1{\begin{longtable}{@{\extracolsep{\fill}}ll}#1\end{longtable}}
+
+\def\endfirstpage{\newpage}
+
 \begin{document}
-
-% Print the header with above personal informations
-% Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader
-
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
-\makecvfooter
-  {August, 2020}
-    {Robin A. Donatello~~~·~~~Curriculum Vitae}
-  {\thepage}
-
-
-%-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%------------------------------------------------------------------------------
-
+\maketitle
 
 
 \hypertarget{education}{%
 \section{Education}\label{education}}
 
-\detailedsection{\detaileditem{Dr. Public Health in Biostatistics}{2007 - 2013}{University of California, Los Angeles}{Los Angeles}{\item{Thesis: Sequential Bayesian Regression for Multiple Imputation and Conditional Editing}}\detaileditem{Masters of Science in Biostatistics}{2005 - 2007}{University of California, Los Angeles}{Los Angeles}{\empty}\detaileditem{Bachelors of Science}{2001 - 2005}{California State University, Chico}{Chico}{\item{Statistics}\item{Biology, Minor in Chemistry}}}
+\detailedsection{\detaileditem{Dr. Public Health in Biostatistics}{2007 - 2013}{University of California, Los Angeles}{}{\empty}\detaileditem{Masters of Science in Biostatistics}{2005 - 2007}{University of California, Los Angeles}{}{\empty}\detaileditem{Bachelors of Science - Statistics}{2001 - 2005}{California State University, Chico}{}{\empty}\detaileditem{Bachelors of Science - Biology, Minor in Chemistry}{2001 - 2005}{California State University, Chico}{}{\empty}}
 
-\hypertarget{work-experience}{%
-\section{Work Experience}\label{work-experience}}
+\hypertarget{employment}{%
+\section{Employment}\label{employment}}
 
-\detailedsection{\detaileditem{Faculty in Statistics}{2014 - Present}{Department of Mathematics and Statistics, California State University, Chico}{Chico, CA}{\item{Associate Professor (2020-Present)}\item{Assistant Professor (2014-2020)}\item{Courses Taught: Intro Statistics (GE Freshmen), Applied Statistics I (mostly non-majors), II (mostly majors), Data Science}}\detaileditem{Database Administrator}{2012 - 2015}{Keeping It Real LAC, Institute for Health Promotion and Disease Prevention Research, University of Southern California}{Los Angeles, CA}{\item{Jointly managed by – Los Angeles County Department of Public Health, HIV and STD Program Office}}\detaileditem{Data Analyst}{2007 - 2012}{Project Connect, Health Research Association, University of Southern California}{Los Angeles, CA}{\empty}}
+\detailedsection{\detaileditem{Associate Professor}{2020 - Present}{Department of Mathematics and Statistics, California State University, Chico}{}{\empty}\detaileditem{Asistant Professor}{2014 - 2020}{Department of Mathematics and Statistics, California State University, Chico}{}{\empty}\detaileditem{Database Administrator}{2012 - 2015}{Keeping It Real LAC}{}{\item{Joint employment between the Institute for Health Promotion and Disease Prevention Research, University of Southern California and the Los Angeles County Department of Public Health, HIV and STD Program Office}}\detaileditem{Data Analyst}{2007 - 2012}{Project Connect, Health Research Association, University of Southern California}{}{\empty}}
 
-\hypertarget{teaching-experience}{%
-\section{Teaching Experience}\label{teaching-experience}}
+\hypertarget{academic-leadership}{%
+\section{Academic leadership}\label{academic-leadership}}
 
-\footnotesize\{
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Data Science Program Coordinator} (2014-Present)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    In collaboration with the Department of Computer Science, I developed the Undergraduate Certificate in Data Science at CSU, Chico. Program started Fall 2018
+  \item
+    Currently working to expand into the Freshman/GE and Graduate space; Create a student internship program, and fee-based data-services practice.
+  \item
+    Website developer and maintainer for campus based website (\url{https://www.csuchico.edu/datascience}) and external blog based website (\url{http://datascience.csuchico.edu})
+  \end{itemize}
+\item
+  \textbf{DataFest Event Coordinator} (2018-Present)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Organize and host the annual DataFest at Chico State, a weekend long data hackathon where teams of undergraduate students tackle a suprise real world dataset and compete for fame and prizes.
+  \item
+    Website: \url{https://chicodatafest.netlify.app/}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{teaching}{%
+\section{Teaching}\label{teaching}}
+
+I teach the Intro and Applied Statistics courses for majors and non-majors, as well as an Intro and Advanced Data Science course at Chico State. Courses marked with a \(^{\dagger}\) indicate that I developed and introduced that course. Most of my course materials are available on my website: www.norcalbiostat.com.
+
+\(\vspace{1mm}\)
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Statistics} (Math 105) - General Education
+\item
+  \(^{\dagger}\)\textbf{Introduction to R} (Math 130) - Short course
+\item
+  \textbf{Applied Statistics I} (Math 315) - Non Majors, mostly Natural Sciences
+\item
+  \textbf{Applied Statistics II} (Math 456) - Majors, Minors, Data Science Certificate
+\item
+  \(^{\dagger}\)\textbf{Introduction to Data Science} (Math 385)
+\item
+  \(^{\dagger}\)\textbf{Advanced Topics in Data Science} (Math 485)
+\item
+  \(^{\dagger}\)\textbf{Data Science Project Capstone} (Math 490)
+\end{itemize}
+
+\newpage
+
+\hypertarget{workshops}{%
+\subsection{Workshops}\label{workshops}}
+
 In addition to teaching traditional courses, I occasionally teach reproducible research and data analysis skills using R at workshops.
-\}
 
-\detailedsection{\detaileditem{Teaching assistant}{Jan. 2020}{Tidy Time Series and Forecasting in R}{rstudio::conf, San Francisco, California}{\item{Two day workshop with Rob Hyndman on forecasting using tidyverse workflows.}}\detaileditem{Instructor}{Nov. 2019}{Interactive documents with Shiny}{CSIRO Canberra, Australia}{\item{Two day intermediate workshop on developing of shiny applications.}}\detaileditem{Instructor}{Sep. 2019}{Data Wrangling}{Monash University Clayton, Australia}{\item{A short workshop in the student ran 'R Workshops for Beginners' series on using tidyr and dplyr to wrangle data.}}\detaileditem{Helper}{Jul. 2019}{Tidyverse developer day}{RStudio, Toulouse France}{\item{A one day developer day where I helped R users resolve issues on tidyverse packages.}}\detaileditem{Teaching assistant}{Aug. 2019}{High-dimensional time
-series analysis}{ISI WSC, Kuala Lumpur, Malaysia}{\item{One day short course with Rob Hyndman for analysing and forecasting large collections of time series.}}\detaileditem{Instructor}{Mar. 2019}{The grammar of animation}{Monash University Clayton, Australia}{\item{A short workshop for NUMBAT group on creating animated graphics in R with gganimate}}\detaileditem{Teaching assistant}{Dec. 2016}{Master R Developer Workshop}{RStudio, Melbourne Australia}{\item{A two day workshop with Hadley Wicham on programming with R and developing R packages.}}}
+\detailedsection{\detaileditem{Promote yourself - make your own professional website without knowing HTML}{2020}{San Diego, California}{International Conference on Health Policy Statistics}{\item{https://norcalbiostat.github.io/ichps20\_workshops/}}\detaileditem{Data Carpentry Workshop - Center for Healthy Communities}{2019}{Chico, CA}{Chico State Data Science Initative}{\item{https://csucdsi.github.io/2019-06-19-chicostate/}}\detaileditem{Data Carpentry Workshop - General Campus}{2018}{Chico, CA}{Chico State Data Science Initative}{\item{https://csucdsi.github.io/2018-08-13-chicostate/}}\detaileditem{Data Carpentry Workshop}{2017}{Davis, CA}{UC Davis Data Lab}{\item{Wandering Helper}}}
 
-\hypertarget{scholarly-works}{%
-\section{Scholarly Works}\label{scholarly-works}}
+\hypertarget{grants-contracts}{%
+\section{Grants \& Contracts}\label{grants-contracts}}
+
+\detailedsection{\detaileditem{College of BSS Strategic Performance Award}{2020}{Internal \$2500}{Building Community of Data-Science Enabled Research in the Social Sciences}{\item{Project Report: https://data485-s20.github.io/campfire\_tweets/}}\detaileditem{NSF IUSE}{2018-2020}{External \$1600}{A Data-Driven, Multidisciplinary Curriculum Providing Access to the Data Analytics Economy through Project-based Learning}{\item{Implementation partner. During S20 providing grant-wide student support in R programming. Abstract: https://www.nsf.gov/awardsearch/showAward?AWD\_ID=1820766}}\detaileditem{Exceptional Levels of Service to Students}{2017}{Internal \$5200}{Digging deeper to look beyond the DFW rate: A practical guide to analyze student success interventions.}{\item{Guidelines for using campus owned data in rigorous program evaluation of student success interventions. }}\detaileditem{Department of Chemisty and Biochemistry}{2016}{Internal \$5200}{Mining historical data for predictive intervention in General Chemistry Course Redesign.}{\item{Project Report: https://norcalbiostat.github.io/chem\_ss}}\detaileditem{American Statistical Association Conference Travel Grant}{2015}{External \$500}{ASA Statistical Programmers and Analysts Section}{\item{Funding to attend 2015 Joint Statistical Meetings}}}
+
+\newpage
+
+\hypertarget{consulting}{%
+\section{Consulting}\label{consulting}}
+
+I often consult with internal and external people and organizations to provide Statistical or Data Science assistance that do not directly result in a manuscript.
+
+\detailedsection{\detaileditem{Jennifer Wilking, Susan Roll}{2019-Present}{Department of Political Science, School of Social Work, CSU Chico}{}{\item{Statistical analysis support for a housing insecurity study. }}\detaileditem{Brady Hayes}{2019}{Enloe Medical Center, Chico, CA}{}{\item{Statistical consulting for PHd Thesis research}}\detaileditem{Center for Healthy Communites}{2018-Present}{CSU, Chico}{}{\item{On retainer as Interim Research \& Evaluation co-lead. Supervise data science interns and technical program analysts. Automation of program administrative tasks. Creating scripts to automate program reporting, research analysis, manuscript writing, grant writing}}\detaileditem{Dr. Ben Van Deusen}{2018}{Department of Science Education, CSU Chico}{}{\item{R programming assistance for missing data models. }}\detaileditem{BLDD Architects}{2017}{Illinois}{}{\item{Data analysis to analyze the effect of building and campus structural changes on middle- and high-school students academic performance and rate of referrals to the principal.  }}\detaileditem{Driscoll Berries}{2016}{Red Bluff, CA}{}{\item{Sampling design and analysis of the effects of varying growing conditions on strawberry plants.}}\detaileditem{Keeping It Real Together}{2015-present}{Los Angeles, CA}{}{\item{Program evaluation of a federally funded Teen Pregnancy Prevention program. }}\detaileditem{Dr. Bill Loker}{2014-2017}{CSUC Department of Undergraduate Education}{}{\item{Predictive modeling of students at risk of dropping out after the second year. }}\detaileditem{UCLA Fielding School of Public Health, Center for Health Advancement}{2013-2015}{Los Angeles, CA}{}{\item{Create and implement methods to improve the quality of local area estimates in LA County and forecast changes in risk factors and disease rates through 2030 using empirical Bayesian methods and MCMC simulation.}}\detaileditem{Absolute Return for Kids}{2013}{Mozambique, Africa}{}{\item{Assess the impact of mobile technology on patient retention in HIV care. Study design, enrollment simulation using and power analysis.}}\detaileditem{UCLA Luskin School of Public Affairs}{2013}{Los Angeles, CA}{}{\item{Assess the correlation between DUI arrestees with prior violent criminal histories and motor vehicle crashes resulting in death or injury. Study design, statistical consultation, and data analysis. }}\detaileditem{Dr. David S. Finley}{2011}{Institute of Urologic Oncology, David Geffen School of Medicine, UCLA}{}{\item{Analysis of staining patterns for aggressive tumors.}}\detaileditem{Media Genus, Diversified Mercury Communications, LLC}{2009-11}{Santa Monica, CA}{}{\item{Predictive marketing analysis using Bayesian hierarchical modeling and MCMC on large and sparse data.}}\detaileditem{Dr. Aarne Jyrala}{2008}{Heart Institute, Department of Cardiothoracic Surgery, Good Samaritan Hospital}{}{\item{Analyzed the effect of Euroscore variables and hyperthyroidism on post-operative patients undergoing renal failure.}}\detaileditem{Agata Rozga, graduate student}{2007}{UCLA Center for Autism Research and Treatment}{}{\item{Consult on analysis and interpretation of the effects of withdrawing attention on infants with autistic siblings. }}\detaileditem{Dennis Corbin}{2007}{CSU Dominguez Hills}{}{\item{Data analysis on the relationship between spirituality and HIV/Sexual risk behaviors in teens.}}\detaileditem{Dr. Judith Currier}{2007}{UCLA School of Medicine}{}{\item{Data analysis of Coronary Atherosclerosis in HIV-infected Patients}}}
+
+\hypertarget{professional-society-memberships}{%
+\section{Professional Society Memberships}\label{professional-society-memberships}}
+
+\detailedsection{\detaileditem{American Statistical Association}{2007 - Present}{Member}{Sections on Statistics and Data Science Education, 
+  Statistical Programmers and Analysts, Teaching Statistics in Health Sciences}{\empty}\detaileditem{Western Users of SAS Software}{2012 - 2013}{Student Member}{}{\empty}\detaileditem{American Public Health Association}{2011 - 2013}{Member}{Section on Public Health Statistics}{\empty}}
+
+\hypertarget{professional-service}{%
+\section{Professional Service}\label{professional-service}}
+
+\detailedsection{\detaileditem{Western Users of SAS Software Annual Conference and Educational Forum}{2016-2020}{Conference Planning Committee}{Academic Scholarship Co-Chair}{\empty}\detaileditem{Joint Statistical Meetings}{2015}{Conference Session Chair}{Invited oral presentations on Big Data}{\empty}\detaileditem{American Public Health Association 2012 Annual Conference}{2014}{Conference Abstract Reviewer}{}{\empty}\detaileditem{The American Statistician}{2014}{Publication Reviewer}{}{\empty}\detaileditem{Western Users of SAS Software Annual Conference and Educational Forum}{2013}{Conference Session Chair}{Section on Statistics and Analytics}{\empty}\detaileditem{American Journal of Public Health}{2011}{Publication Reviewer}{}{\empty}\detaileditem{Joint Statistical Meetings}{2009}{Conference Session Chair}{Section on Bayesian Statistical Science}{\empty}}
+
+\newpage
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
 
 \hypertarget{books}{%
 \subsection{Books}\label{books}}
 
-\defbibheading{bib-C:/GitHub/CV/pubs.bib-4284464}{}
-\addtocategory{bib-C:/GitHub/CV/pubs.bib-4284464}{pma6}
+\defbibheading{bib-C:/GitHub/CV/pubs.bib-2950198}{}
+\addtocategory{bib-C:/GitHub/CV/pubs.bib-2950198}{pma6}
 \newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
-\printbibliography[category=bib-C:/GitHub/CV/pubs.bib-4284464,heading=none]\setcounter{papers}{0}
+\printbibliography[category=bib-C:/GitHub/CV/pubs.bib-2950198,heading=none]\setcounter{papers}{0}
 
 \nocite{pma6}
 
 \hypertarget{peer-reviewed-manuscripts}{%
 \subsection{Peer-reviewed manuscripts}\label{peer-reviewed-manuscripts}}
 
-\defbibheading{bib-C:/GitHub/CV/pubs.bib-4285658}{}
-\addtocategory{bib-C:/GitHub/CV/pubs.bib-4285658}{PhysRevPhysEducRes.15.020106,
-ROHRBACH2019382,
-Fleminge02239-17,
-donatello2016patterns,
+\defbibheading{bib-C:/GitHub/CV/pubs.bib-2951295}{}
+\addtocategory{bib-C:/GitHub/CV/pubs.bib-2951295}{sfox_20,
+nissen19,
+rohrbach_iyg_19,
+Fleming18,
+dittus17,
+donatello_patterns_16,
 dittus2014project,
 gorbach2014order,
-dittus20133,
-logan2013470,
+dittus2013parent,
+logan13,
 de2012improving,
 gorbach2012slippery,
 jyrala2012hypothyroidism,
@@ -228,16 +386,18 @@ gorbach2011behaviors,
 jyrala2010effect,
 micheletti2009coronary}
 \newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
-\printbibliography[category=bib-C:/GitHub/CV/pubs.bib-4285658,heading=none]\setcounter{papers}{0}
+\printbibliography[category=bib-C:/GitHub/CV/pubs.bib-2951295,heading=none]\setcounter{papers}{0}
 
-\nocite{PhysRevPhysEducRes.15.020106,
-ROHRBACH2019382,
-Fleminge02239-17,
-donatello2016patterns,
+\nocite{sfox_20,
+nissen19,
+rohrbach_iyg_19,
+Fleming18,
+dittus17,
+donatello_patterns_16,
 dittus2014project,
 gorbach2014order,
-dittus20133,
-logan2013470,
+dittus2013parent,
+logan13,
 de2012improving,
 gorbach2012slippery,
 jyrala2012hypothyroidism,
@@ -252,13 +412,13 @@ micheletti2009coronary}
 \hypertarget{presentations}{%
 \subsection{Presentations}\label{presentations}}
 
-\defbibheading{bib-C:/GitHub/CV/pubs.bib-4286755}{}
-\addtocategory{bib-C:/GitHub/CV/pubs.bib-4286755}{de2014implementing,
+\defbibheading{bib-C:/GitHub/CV/pubs.bib-2952292}{}
+\addtocategory{bib-C:/GitHub/CV/pubs.bib-2952292}{de2014implementing,
 jeffries2013patterns,
 jeffries2012early,
 gorbach2010rectal}
 \newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
-\printbibliography[category=bib-C:/GitHub/CV/pubs.bib-4286755,heading=none]\setcounter{papers}{0}
+\printbibliography[category=bib-C:/GitHub/CV/pubs.bib-2952292,heading=none]\setcounter{papers}{0}
 
 \nocite{de2014implementing,
 jeffries2013patterns,

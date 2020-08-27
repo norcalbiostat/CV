@@ -2,17 +2,17 @@
 name: Robin A. Donatello
 date: "`r format(Sys.time(), '%B, %Y')`"
 qualifications: Dr.PH, Biostatistics
-position: 
-address: 
+position: Associate Professor of Statistics
+address: "Department of Mathematics and Statistics, \\tabularnewline California State University, Chico"
 phone: 
 email: rdonatello@csuchico.edu
 twitter: norcalbiostat
 www: norcalbiostat.com
 github: norcalbiostat
 linkedin: rajeffries
-headcolor: 1618b5
+headcolor: 168233
 output: 
-  vitae::awesomecv:
+  vitae::hyndman:
     keep_tex: true
 ---
 
@@ -25,64 +25,135 @@ knitr::opts_chunk$set(echo = FALSE)
 # Education
 ```{r education}
 tribble(
-  ~ degree, ~ uni, ~ loc, ~ dates, ~details,
-    "Dr. Public Health in Biostatistics", "University of California, Los Angeles", "Los Angeles", "2007 - 2013", "Thesis: Sequential Bayesian Regression for Multiple Imputation and Conditional Editing",
-    "Masters of Science in Biostatistics", "University of California, Los Angeles", "Los Angeles", "2005 - 2007",NA,
-    "Bachelors of Science", "California State University, Chico", "Chico", "2001 - 2005", "Statistics", 
-    "Bachelors of Science", "California State University, Chico", "Chico", "2001 - 2005", "Biology, Minor in Chemistry"
+  ~ degree, ~ uni, ~ dates,
+    "Dr. Public Health in Biostatistics", "University of California, Los Angeles", "2007 - 2013", 
+    "Masters of Science in Biostatistics", "University of California, Los Angeles",  "2005 - 2007",
+    "Bachelors of Science - Statistics", "California State University, Chico",  "2001 - 2005",
+    "Bachelors of Science - Biology, Minor in Chemistry", "California State University, Chico", "2001 - 2005", 
 ) %>% 
-  detailed_entries(degree, dates, uni, loc, details)
+  detailed_entries(degree, dates, uni)
 ```
 
 
 
-# Work Experience
+# Employment
 
 ```{r jobs}
 tribble(
-  ~ role, ~ company, ~ loc, ~ dates, ~details,
-  "Faculty in Statistics", "Department of Mathematics and Statistics, California State University, Chico", "Chico, CA", "2014 - Present", "Associate Professor (2020-Present)",
-  "Faculty in Statistics", "Department of Mathematics and Statistics, California State University, Chico", "Chico, CA", "2014 - Present", "Assistant Professor (2014-2020)",
-  "Faculty in Statistics", "Department of Mathematics and Statistics, California State University, Chico", "Chico, CA", "2014 - Present", "Courses Taught: Intro Statistics (GE Freshmen), Applied Statistics I (mostly non-majors), II (mostly majors), Data Science",
-  "Database Administrator", "Keeping It Real LAC, Institute for Health Promotion and Disease Prevention Research, University of Southern California" , "Los Angeles, CA", "2012 - 2015", "Jointly managed by – Los Angeles County Department of Public Health, HIV and STD Program Office", 
-  "Data Analyst", "Project Connect, Health Research Association, University of Southern California", "Los Angeles, CA", "2007 - 2012",NA,
+  ~ role, ~ company,  ~ dates, ~details,
+  "Associate Professor", "Department of Mathematics and Statistics, California State University, Chico",  "2020 - Present", NA,
+  "Asistant Professor", "Department of Mathematics and Statistics, California State University, Chico",  "2014 - 2020", NA,
+  "Database Administrator", "Keeping It Real LAC" ,  "2012 - 2015", "Joint employment between the Institute for Health Promotion and Disease Prevention Research, University of Southern California and the Los Angeles County Department of Public Health, HIV and STD Program Office",
+  "Data Analyst", "Project Connect, Health Research Association, University of Southern California",  "2007 - 2012",NA,
 ) %>% 
-  detailed_entries(with=company, 
-                   what = role, 
-                   when = dates, 
-                   where = loc, 
-                   why = details)
+  detailed_entries(with  = company, 
+                   what  = role, 
+                   when  = dates, 
+                   why   = details)
 ```
+
+# Academic leadership
+* **Data Science Program Coordinator** (2014-Present)
+    - In collaboration with the Department of Computer Science, I developed the Undergraduate Certificate in Data Science at CSU, Chico. Program started Fall 2018
+    - Currently working to expand into the Freshman/GE and Graduate space; Create a student internship program, and fee-based data-services practice. 
+    - Website developer and maintainer for campus based website (https://www.csuchico.edu/datascience) and external blog based website (http://datascience.csuchico.edu)
+* **DataFest Event Coordinator** (2018-Present)
+  - Organize and host the annual DataFest at Chico State, a weekend long data hackathon where teams of undergraduate students tackle a suprise real world dataset and compete for fame and prizes. 
+  - Website: https://chicodatafest.netlify.app/ 
 
 # Teaching 
 
-I teach the Intro and Applied Statistics courses for majors and non-majors, as well as an Intro and Advanced Data Science course at Chico State. Most of my course materials are available on my website: www.norcalbiostat.com. 
+I teach the Intro and Applied Statistics courses for majors and non-majors, as well as an Intro and Advanced Data Science course at Chico State. Courses marked with a $^{\dagger}$ indicate that I developed and introduced that course. Most of my course materials are available on my website: www.norcalbiostat.com. 
 
+$\vspace{1mm}$
+
+* **Statistics** (Math 105) - General Education
+* $^{\dagger}$**Introduction to R** (Math 130) - Short course
+* **Applied Statistics I** (Math 315) - Non Majors, mostly Natural Sciences
+* **Applied Statistics II** (Math 456) - Majors, Minors, Data Science Certificate
+* $^{\dagger}$**Introduction to Data Science** (Math 385)
+* $^{\dagger}$**Advanced Topics in Data Science** (Math 485)
+* $^{\dagger}$**Data Science Project Capstone** (Math 490)
+
+\newpage
+
+## Workshops
 In addition to teaching traditional courses, I occasionally teach reproducible research and data analysis skills using R at workshops.
 
 
-```{r workshops}
-tribble(
-  ~ role, ~ course, ~ location, ~ dates, ~ details,
-  "Instructor", "Promote yourself - make your own professional website without knowing HTML", "International Conference on Health Policy Statistics 2020, San Diego, California", "Jan. 2020", "https://norcalbiostat.github.io/ichps20_workshops/",
-  "Instructor", "Carpentry workshop 2019", "CSU, Chico", "Nov. 2019", "Two day intermediate workshop on developing of shiny applications.",
-  "Instructor", "Carpentry workshop 2018", "CSU Chico", "Sep. 2019", "A short workshop in the student ran 'R Workshops for Beginners' series on using tidyr and dplyr to wrangle data.",
-  "Instructor", "That teaching thing", "CSU Chico", "Sep. 2019", "A short workshop in the student ran 'R Workshops for Beginners' series on using tidyr and dplyr to wrangle data.",
-  "Helper", "Carpentry workshop 2017", "UC Davis", "Jul. 2019", "A one day developer day where I helped R users resolve issues on tidyverse packages.",
-) %>% 
-  detailed_entries(role, dates, course, location, details)
+```{r}
+wk <- read.csv("workshops.csv", header=TRUE) %>% arrange(desc(when))
+wk %>% 
+          detailed_entries(when = when, 
+                           what = title,
+                           with = loc, 
+                           where = org, 
+                            why = details)
 ```
 
-# Program Coordinator
-I run the DSI. 
+# Grants & Contracts
 
-<!-- ## Academic research -->
+```{r}
+gc <- read.csv("grants.csv", header=TRUE) %>% arrange(desc(dates)) %>%
+       mutate(with = paste0(type, " $", amount))
+gc %>% detailed_entries(when = dates, 
+                        what = grant, 
+                        where = title, 
+                        with = with,
+                        why  = details)
+```
+
+\newpage
+
+# Consulting
+I often consult with internal and external people and organizations to provide Statistical or Data Science assistance that do not directly result in a manuscript. 
+
+```{r}
+consulting <- read.csv("consulting.csv", header=TRUE) %>% arrange(desc(when))
+consulting %>% detailed_entries(when = when, 
+                                what = with, 
+                                with = loc, 
+                                why = details)
+```
+
+
+# Professional Society Memberships
+
+```{r memberships}
+tribble(
+  ~ dates, ~ company, ~ role, ~details, 
+  "2007 - Present", "American Statistical Association", 
+  "Member", "Sections on Statistics and Data Science Education, 
+  Statistical Programmers and Analysts, Teaching Statistics in Health Sciences",
+  "2012 - 2013", "Western Users of SAS Software", 
+  "Student Member", NA, 
+  "2011 - 2013", "American Public Health Association", 
+  "Member", "Section on Public Health Statistics"
+) %>% 
+  detailed_entries(what  = company, 
+                   where  = details, 
+                   when  = dates,
+                   with = role)
+```
+
+# Professional Service
+
+```{r}
+wk <- read.csv("prof-service.csv", header=TRUE) %>% arrange(desc(dates))
+wk %>% 
+          detailed_entries(when = dates, 
+                           what = bold, 
+                          where = under, 
+                            with = right)
+```
+
+\newpage
+
+# Publications
 
 ```{r bibfiles}
 pubs <- bibliography_entries("pubs.bib")
 ```
-
-# Scholarly Works 
 
 ## Books
 
