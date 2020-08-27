@@ -1,8 +1,11 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # Curriculum Vitae
 
-This repository contains the source files used to build my CV with my
-`vitae` package. You can learn more about the vitae package here:
-<https://github.com/ropenscilabs/vitae>
+This repository contains the source files used to build my CV with the
+`vitae` package. You can learn more about the vitae package at 
+https://github.com/ropenscilabs/vitae
+
+
+* https://github.com/seabbs/cv/blob/master/cv/cv.Rmd
+* https://www.samabbott.co.uk/cv/cv.pdf
+* https://pkg.mitchelloharawild.com/vitae/articles/vitae.html
