@@ -42,7 +42,7 @@ tribble(
 tribble(
   ~ role, ~ company,  ~ dates, ~details,
   "Associate Professor", "Department of Mathematics and Statistics, California State University, Chico",  "2020 - Present", NA,
-  "Asistant Professor", "Department of Mathematics and Statistics, California State University, Chico",  "2014 - 2020", NA,
+  "Assistant Professor", "Department of Mathematics and Statistics, California State University, Chico",  "2014 - 2020", NA,
   "Database Administrator", "Keeping It Real LAC" ,  "2012 - 2015", "Joint employment between the Institute for Health Promotion and Disease Prevention Research, University of Southern California and the Los Angeles County Department of Public Health, HIV and STD Program Office",
   "Data Analyst", "Project Connect, Health Research Association, University of Southern California",  "2007 - 2012",NA,
 ) %>% 
