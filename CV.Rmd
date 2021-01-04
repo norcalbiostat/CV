@@ -9,7 +9,7 @@ email: rdonatello@csuchico.edu
 twitter: norcalbiostat
 www: norcalbiostat.com
 github: norcalbiostat
-linkedin: rajeffries
+orcid: "0000-0001-8487-5995"
 headcolor: 168233
 output: 
   vitae::hyndman:
