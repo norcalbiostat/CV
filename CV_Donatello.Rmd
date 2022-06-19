@@ -1,0 +1,199 @@
+---
+name: Robin
+surname: Donatello
+position: "Associate Professor of Statistics"
+address: "Department of Mathematics and Statistics, California State University, Chico"
+www: norcalbiostat.com
+email: "rdonatello@csuchico.edu"
+github: norcalbiostat
+linkedin: rajeffries
+twitter: norcalbiostat
+orcid: "0000-0001-8487-5995"
+date: "`r format(Sys.time(), '%B %Y')`"
+docname: "CV_Donatello"
+output: 
+   vitae::moderncv:
+    keep_tex: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+library(tibble)
+```
+
+<!---
+# Some stuff about me
+
+ * I poisoned myself doing research.
+ * I was the first woman to win a Nobel prize
+ * I was the first person and only woman to win a Nobel prize in two different sciences.
+--->
+
+# Education
+
+```{r}
+tribble(
+  ~ degree, ~ uni, ~ dates,
+    "Dr. Public Health in Biostatistics (DrPH)", "University of California, Los Angeles", "2007 - 2013", 
+    "Masters of Science in Biostatistics", "University of California, Los Angeles",  "2005 - 2007",
+    "Bachelors of Science - Statistics", "California State University, Chico",  "2001 - 2005",
+    "Bachelors of Science - Biology, Minor in Chemistry", "California State University, Chico", "2001 - 2005", 
+) %>% 
+  brief_entries(degree, dates, uni)
+```
+
+
+# Employment
+
+ 
+```{r jobs}
+tribble(
+  ~ role, ~ company,  ~ dates,
+  "Associate Professor", 
+    "Department of Mathematics and Statistics, California State University, Chico",  
+    "2020 -", 
+  "Assistant Professor", 
+    "Department of Mathematics and Statistics, California State University, Chico",  
+    "2014 - 20", 
+  "Research Manager V", 
+    "Center for Healthy Communities, Chico State Enterprises",  
+    "2018 -",
+  "Database Administrator", 
+    "Keeping It Real LAC - Joint employment between the Institute for Health Promotion and Disease Prevention Research, University of Southern California and the Los Angeles County Department of Public Health, HIV and STD Program Office" ,  
+    "2012 - 15", 
+  "Data Analyst", 
+    "Project Connect, Health Research Association, University of Southern California",  
+    "2007 - 12",
+) %>% 
+  brief_entries(with  = company, what  = role, when  = dates)
+```
+
+\newpage
+
+# Academic leadership
+* **Data Science Program Coordinator** (2014-Present)
+    - In collaboration with the Department of Computer Science, I developed the Undergraduate Certificate in Data Science at CSU, Chico. Program started Fall 2018
+    - Currently working to expand into the Freshman/GE and Graduate space; Create a student internship program, and fee-based data-services practice. 
+    - Website developer and maintainer for campus based website (https://www.csuchico.edu/datascience) and external blog based website (http://datascience.csuchico.edu)
+* **DataFest Event Coordinator** (2018-Present)
+  - Organize and host the annual DataFest at Chico State, a weekend long data hackathon where teams of undergraduate students tackle a suprise real world dataset and compete for fame and prizes. 
+  - Website: https://chicodatafest.netlify.app/ 
+
+
+# Teaching 
+
+I regularly teach Applied and Theoretical Statistics courses, Data Science courses, and applied research/data science internships. The majority of my teaching materials are published through Github and available on my course website. 
+
+$\vspace{1mm}$
+
+* **General Education**
+  - Statistics (Math 105) - General Education
+* **Statistics**
+  - Applied Statistics I (Math 315) - Non Majors, mostly Natural Sciences
+  - Applied Statistics II (Math 456) - Majors, Minors, Data Science Certificate
+  - Probability and Statistics I (Math 350) - Calculus & simulation based probability for all math & some engineering majors.
+* **Data Science**: _All courses listed were developed and introduced by me as part of the Data Science Certificate._
+  - Introduction to R (Math 130) - 5 week short course
+  - Introduction to Data Science (Math 385)
+  - Advanced Topics in Data Science (Math 485)
+  - Data Science Project Capstone/Internship (Math 490)
+
+
+* **Data Skills Workshops**
+In addition to teaching traditional courses, I occasionally teach reproducible research and data analysis skills using R at workshops. I am a certified [Carpentry Instructor](https://carpentries.org/). 
+
+```{r, eval=FALSE}
+wk <- read.csv("workshops.csv", header=TRUE) %>% arrange(desc(when))
+wk %>% 
+          detailed_entries(when = when, 
+                           what = title,
+                           with = loc, 
+                           where = org, 
+                            why = details)
+```
+
+
+# Grants & Contracts
+
+```{r}
+gc <- read.csv("grants.csv", header=TRUE) %>% arrange(desc(dates)) %>%
+       mutate(with = paste(type, amount))
+gc %>% detailed_entries(when = dates, 
+                        what = grant, 
+                        where = title, 
+                        with = with,
+                        why  = details)
+```
+
+\newpage
+
+# Consulting
+I often consult with internal and external people and organizations to provide Statistical or Data Science assistance that do not directly result in a manuscript. 
+
+```{r}
+consulting <- read.csv("consulting.csv", header=TRUE) %>% arrange(desc(when))
+consulting %>% detailed_entries(when = when, 
+                                what = with, 
+                                with = loc, 
+                                why = details)
+```
+
+
+# Professional Society Memberships
+
+```{r memberships}
+tribble(
+  ~ dates, ~ company, ~ role, 
+  "2007 - Present", "American Statistical Association", 
+    "Member: Sections on Statistics and Data Science Education, Statistical Programmers and Analysts, Teaching Statistics in Health Sciences",
+  "2012 - 2013", "Western Users of SAS Software", 
+    "Student Member",
+  "2011 - 2013", "American Public Health Association", 
+    "Member: Section on Public Health Statistics"
+) %>% 
+ brief_entries(what  = company, 
+                   when  = dates,
+                   with = role)
+```
+
+# Professional Service
+
+```{r}
+read.csv("prof-service.csv", header=TRUE) %>% 
+  arrange(desc(dates)) %>% 
+  brief_entries(when = dates, 
+                what = bold, 
+                with = right)
+```
+
+\newpage
+# Publications
+
+```{r bibfiles}
+pubs <- bibliography_entries("pubs.bib")
+```
+
+## Books
+
+```{r books}
+pubs %>%
+  filter(type == "book") 
+```
+
+## Manuscripts
+
+```{r}
+pubs %>%
+  filter(type == "article-journal") %>%
+  arrange(desc(issued))
+```
+
+## Presentations
+
+```{r talks}
+pubs %>%
+  filter(type == "paper-conference") %>%
+  arrange(desc(issued))
+```
