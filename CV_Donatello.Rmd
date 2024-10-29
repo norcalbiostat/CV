@@ -13,6 +13,7 @@ docname: "CV_Donatello"
 output: 
    vitae::moderncv:
     keep_tex: false
+    theme: banking
 ---
 
 ```{r setup, include=FALSE}
@@ -21,14 +22,6 @@ library(vitae)
 library(dplyr)
 library(tibble)
 ```
-
-<!---
-# Some stuff about me
-
- * I poisoned myself doing research.
- * I was the first woman to win a Nobel prize
- * I was the first person and only woman to win a Nobel prize in two different sciences.
---->
 
 # Education
 
@@ -52,13 +45,13 @@ tribble(
   ~ role, ~ company,  ~ dates,
   "Associate Professor", 
     "Department of Mathematics and Statistics, California State University, Chico",  
-    "2020 -", 
+    "2020 - present", 
   "Assistant Professor", 
     "Department of Mathematics and Statistics, California State University, Chico",  
     "2014 - 20", 
   "Research Manager IV", 
     "Center for Healthy Communities, Chico State Enterprises",  
-    "2019 -",
+    "2019 - present",
   "Database Administrator", 
     "Keeping It Real LAC - Joint employment between the Institute for Health Promotion and Disease Prevention Research, University of Southern California and the Los Angeles County Department of Public Health, HIV and STD Program Office" ,  
     "2012 - 15", 
@@ -77,8 +70,8 @@ tribble(
     - Currently working to expand into the Freshman/GE and Graduate space; Create a student internship program, and fee-based data-services practice. 
     - Website developer and maintainer for campus based website (https://www.csuchico.edu/datascience) and external blog based website (http://datascience.csuchico.edu)
 * **DataFest Event Coordinator** (2018-Present)
-  - Organize and host the annual DataFest at Chico State, a weekend long data hackathon where teams of undergraduate students tackle a suprise real world dataset and compete for fame and prizes. 
-  - Website: https://chicodatafest.netlify.app/ 
+  - Organize and host (alternating every other year with Sac State as lead) the annual NorCal DataFest, a weekend long data hackathon where approximately 50 undergraduate students tackle a suprise real world dataset and compete for fame and prizes. 
+  - Website: https://norcaldatafest.netlify.app/
 
 
 # Teaching 
@@ -114,17 +107,24 @@ wk %>%
                             why = details)
 ```
 
+\newpage
 
 # Grants & Contracts
 
 ```{r}
 gc <- read.csv("grants.csv", header=TRUE) %>% arrange(desc(dates)) %>%
-       mutate(with = paste(type, amount))
-gc %>% detailed_entries(when = dates, 
-                        what = grant, 
-                        where = title, 
-                        with = with,
-                        why  = details)
+       mutate(type_amount = paste(type, amount))
+gc %>% detailed_entries(with = grant, 
+                        when = dates,
+                        where = amount, 
+                        what = type, 
+                        why = details)
+
+# gc %>% detailed_entries(with = with,
+#                         when = dates, 
+#                         what = grant, 
+#                         where = title, 
+#                         why  = details)
 ```
 
 \newpage
