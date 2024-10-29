@@ -6,12 +6,12 @@ address: "Department of Mathematics and Statistics, California State University,
 www: norcalbiostat.com
 email: "rdonatello@csuchico.edu"
 github: norcalbiostat
-linkedin: rajeffries
-orcid: "0000-0001-8487-5995"
+#linkedin: rajeffries
+#orcid: "0000-0001-8487-5995"
 date: "`r format(Sys.time(), '%B %Y')`"
 docname: "CV_Donatello"
 output: 
-   vitae::moderncv:
+   vitae::latexcv:
     keep_tex: false
 ---
 
@@ -184,7 +184,7 @@ pubs %>%
 
 ## Manuscripts
 
-```{r paper}
+```{r}
 pubs %>%
   filter(type == "article-journal") %>%
   arrange(desc(issued))
@@ -195,14 +195,5 @@ pubs %>%
 ```{r talks}
 pubs %>%
   filter(type == "paper-conference") %>%
-  arrange(desc(issued))
-```
-
-
-## Other
-
-```{r other}
-pubs %>%
-  filter(type == "manuscript") %>%
   arrange(desc(issued))
 ```
