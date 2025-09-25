@@ -43,9 +43,12 @@ tribble(
 ```{r jobs}
 tribble(
   ~ role, ~ company,  ~ dates,
+  "Professor", 
+    "Department of Mathematics and Statistics, California State University, Chico",  
+    "2025 - present", 
   "Associate Professor", 
     "Department of Mathematics and Statistics, California State University, Chico",  
-    "2020 - present", 
+    "2020 - 2024", 
   "Assistant Professor", 
     "Department of Mathematics and Statistics, California State University, Chico",  
     "2014 - 20", 
@@ -130,7 +133,7 @@ gc %>% detailed_entries(with = grant,
 \newpage
 
 # Consulting
-I often consult with internal and external people and organizations to provide Statistical or Data Science assistance that do not directly result in a manuscript. 
+I often consult with internal and external people and organizations to provide Statistical or Data Science assistance that do not directly result in a manuscript. Starting in 2025 I am now directing a research support group called the WildCat Data Hub (WDH). Under the mentorship of faculty affiliates, student consultants assist clients on a wide range of projects from code assistance, image processing and statistical analysis review. 
 
 ```{r}
 consulting <- read.csv("consulting.csv", header=TRUE) %>% arrange(desc(when))
